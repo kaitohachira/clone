@@ -1,0 +1,93 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+bady{
+    background-color: rgb(211, 164, 164);
+    }
+
+header,section{
+     padding: 5rem;
+    }
+
+header{
+    background-color: #2196f3;
+}
+main{
+    max-width: 1200px;
+    /*CENTRALIZANDO CONTEUDO*/
+    margin: auto;
+    /*ABILITANDO O GRID*/
+    display: grid;
+    /*HABILITANDO AS AREAS QUE SERAO POSICIONADAS*/
+    grid-template-areas: 
+    'video-player video-player'
+    'video-info   video-info'
+    'actions      actions'
+    'channel      subscribe'
+    'up-next      up-next';
+} 
+
+.video-player{
+    background-color: #ffeb3b;
+    grid-area: video-player;
+}
+
+.video-info{
+    background-color: #e91e63;
+    grid-area: video-info;
+}
+
+.actions{
+    background-color: #8bce8b;
+    grid-area: actions;
+}
+
+.chennal{
+    background-color: #15645e;
+    grid-area: channel;
+}
+
+.subscribe{
+    background-color: #3c643c;
+    grid-area: subscribe;
+}
+
+.ad{
+    background-color: #2196f3;
+    /*grid-area: ad;*/
+    /* display: none; */
+
+}
+
+.up-next{
+    background-color: #917d26;
+    grid-area: up-next;
+}
+/* APLICANDO RESPONSIVIDADE*/
+
+/*APLICANDO O CONCEITO DO MOBILE FIRST*/
+
+@media screen and (max-width:70px){
+    .ad{
+        display: none;
+
+    }
+
+}
+@media screen  and (min-width: 700px){
+    main{
+     max-width: 1200px;
+
+
+    grid-template-areas: 
+
+    'video-player video-player ad'
+    'video-player video-player   up-next'
+    'video-info   actions      up-next'
+    'channel      subscribe    up-next';
+    }
+
+}
