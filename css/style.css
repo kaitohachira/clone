@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f9f9f9;
+    color: #222;
+    font-family: 'roboto',sans-serif;
+}
+
+header{
+    padding: 1rem;
+    background-color: #fff;
+    border-bottom: 2px solid #f2f2f2;
+
+    /*APLICANDO O GRID*/
+  display: grid;
+  grid-template-columns: auto auto;
+
+  justify-content: space-between;
+  align-items: center;
+}
+a{
+    text-decoration: none;
+    color: #222;
+}
+.logo img{
+    width: 100px;
+}
+.search input[type="search"]{
+    width: 400px;
+    padding: 0.5rem;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+}
+.button{
+    padding: 0.25rem 1.5rem;
+    border: 1px solid #2c5fd5;
+    border-radius: 4px;
+    color: #2c5fd5;
+    font-weight: bold;
+}
+.subscribe .button{
+    border: none;
+    background-color: #fb2300;
+    color: #fff;
+    padding: 10px 16px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+main{
+    /* max-width: 1200px; */
+    /* CENTRALIZAR CONTEÚDO */
+    margin: auto;
+    /* HABILITANDO O GRID */
+    display: grid;
+    /* ESPAÇO ENTRE CADA GRID */
+    grid-row-gap: 1rem;
+    /* HABILITA AS AREAS QUE SERÃO POSICIONADAS */
+    grid-template-areas: 
+    'video-player video-player'
+    'video-info video-info'
+    'actions actions'
+    'channel subscribe'
+    'up-next up-next'
+}
+.video-player{
+    background-color: #ffeb3b;
+    grid-area: video-player;
+    
+}
+.video-info{
+    background-color: #e91e63;
+    grid-area: video-info;
+}
+.actions{
+    background-color: #03a9f4;
+    grid-area: actions;
+}
+.channel{
+    background-color: #673ab7;
+    grid-area: channel;
+}
+.subscribe{
+    background-color: #8bc34a;
+    grid-area: subscribe;
+}
+.ad{
+    background-color: #ff5722;
+    grid-area: ad;
+    /* ESCONDER O ANÚNCIO */
+    /* display: none; */
+}
+.up-next{
+    background-color: #3f51b5;
+    grid-area: up-next;
+}
+/* APLICANDO RESPONSIVIDADE */
+ 
+/* APLICANDO O CONCEITO DO MOBILE FIRST */
+@media screen and (min-width:700px){
+    header{
+        grid-template-columns: auto auto auto;
+    }
+    main{
+        max-width: 1200px;
+        grid-template-areas: 
+ 
+        'video-player video-player ad'
+        'video-player video-player  up-next'
+        'video-info   actions       up-next'
+        'channel      subscribe     up-next';
+        
+    }
+ 
+}
+
